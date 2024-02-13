@@ -1,23 +1,24 @@
-# AWS-NETWORKING-IPLEMENTATION
+# AWS-NETWORKING-IMPLEMENTATION
+
  ## VPC , Subnets , IG , NAT , Routing 
 
 # VPC(Virtual Private Cloud)
 
  ## Creating a new VPC
 
-Go to VPC page
+1 . Go to VPC page
 
-VPC resource choose (VPC only)
+2 . VPC resource choose (VPC only)
 
-Give it name (first-vpc)
+3 . Give it name (first-vpc)
 
-In IPv4 CIDR manual block info choose IPv4 manual input
+4 . In IPv4 CIDR manual block info choose IPv4 manual input
 
-Input the IPv4 provided
+5 . Input the IPv4 provided
 
-In IPv6 CIDR  block info select no IPv6 CIDR block
+6 . In IPv6 CIDR  block info select no IPv6 CIDR block
 
- Now create the VPC by clicking on Create vpc button
+ 7 . Now create the VPC by clicking on Create vpc button
 
   Results.
 
@@ -31,7 +32,7 @@ Once a VPC is created,it is assigned a VPC id and a Route table is also creates 
 
 ## Creating and configuring Subnets.
 
-On VPC page,go to subnets ->create subnet ->click on vpc already created -> click on create subnet. (if you have several subnets to create, instead of clicking on the create subnet button first, click on add new sunet till you are done adding all your subnets then you can click on create subnet.
+On VPC page,go to subnets ->create subnet ->click on vpc already created -> click on create subnet. (if you have several subnets to create, instead of clicking on the create subnet button first, click on add new subnet till you are done adding all your subnets then you can click on create subnet).
 
 Also ensure youspecify the cidr block and Available zone for the subnet because if you dont choose a zone ,it will be randomly allocated by AWS
 
@@ -75,16 +76,16 @@ It directs movement of data  on the VPC
 
 #### Steps of creating and configuring route table
 
-vpc>route table>create route table>NAME>VPC to use>create route table
+ ##### vpc>route table>create route table>NAME>VPC to use>create route table
 
-Confuguring the route table 
+### Confuguring the route table 
 
-vpc>Route tables>(rtb)>Edit routes>destination (0.0.0.0.0/0)> Target Internet (Gateway)SELECT IGW you wnat to edit>save changes
+###### vpc>Route tables>(rtb)>Edit routes>destination (0.0.0.0.0/0)> Target Internet (Gateway)SELECT IGW you wnat to edit>save changes
 
 ![image](https://github.com/NANA-2016/AWS-NETWORKING-IPLEMENTATION/assets/141503408/b0eae279-8396-4216-84e1-b439e93f7d68)
 
 
-vpc>Route tables>(rtb)>subnet associations>Edit  subnet association(public subnets)>Save associations.
+##### vpc>Route tables>(rtb)>subnet associations>Edit  subnet association(public subnets)>Save associations.
 
 ![image](https://github.com/NANA-2016/AWS-NETWORKING-IPLEMENTATION/assets/141503408/f5d2bffc-b62e-485d-aa75-ce6f30dede97)
 
@@ -99,15 +100,15 @@ After these configuration, The VPC is ready and you can run an EC2 instance in p
 
  #### Creating a Network Address Translation(NAT) gateway.
 
- VPC>NAT GATEWAYS>Create NAT Gateway>Natgateway settings> give a name to the NAT gateway>select the subnet you want to link it upto> Allocate an elastic IP(As it is a requirement here)>create NAT gateway.
+##### VPC>NAT GATEWAYS>Create NAT Gateway>Natgateway settings> give a name to the NAT gateway>select the subnet you want to link it upto> Allocate an elastic IP(As it is a requirement here)>create NAT gateway.
 
 ![image](https://github.com/NANA-2016/AWS-NETWORKING-IPLEMENTATION/assets/141503408/852471a2-e662-4c3d-9cb0-e6479749434e)
 
-vpc>Route tables>(rtb)>Edit routes>destination (0.0.0.0.0/0)> Target (nat)SELECT nat you wnat to edit>save changes
+##### vpc>Route tables>(rtb)>Edit routes>destination (0.0.0.0.0/0)> Target (nat)SELECT nat you wnat to edit>save changes
 
 ![image](https://github.com/NANA-2016/AWS-NETWORKING-IPLEMENTATION/assets/141503408/64f9d702-fcbb-4a8a-bff6-bb368b9e75d7)
 
-vpc>Route tables>(rtb)>subnet associations>Edit  subnet association(private subnet)>Save associations.
+##### vpc>Route tables>(rtb)>subnet associations>Edit  subnet association(private subnet)>Save associations.
 
 ![image](https://github.com/NANA-2016/AWS-NETWORKING-IPLEMENTATION/assets/141503408/83452847-3887-4b60-878d-9bdad988b4f3)
 
