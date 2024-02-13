@@ -44,31 +44,31 @@ Expected output on subnets page.
 
 Creating a Public subnet Procedure.(for resources that need connection to the internet)
 
-Subnet> create subnet>Attach an intenet gateway>update the route table associated with this subnet(to allow flow of traffic to and from the internet)
+##### Subnet> create subnet>Attach an intenet gateway>update the route table associated with this subnet(to allow flow of traffic to and from the internet)
 
 Creating a Private subnet Procedure.(for resources you dont want to expose to the internet)
 
-Subnet> create subnet(route table to these subnet dousnt allow direct traffic to and from the internet)
+###### Subnet> create subnet(route table to these subnet dousnt allow direct traffic to and from the internet)
 
 # Internet gateway and Routing table
 
   ## Internet Gateway.
 
    Connects VPC to the internet.
+   
+   These are route that allows the subnets to start operating as public subnets. Also you need to route table towards IGW using the public IP assisgned to AWS resourse eg an instance.
 
-    These are route that allows the subnets to start operating as public subnets. Also you need to route table towards IGW using the public IP assisgned to AWS resourse eg an instance.
+  Internet Gateway creation.
 
-    Internet Gateway creation.
+##### vpc>Internet gateway>create internet Gateway> give it a name> click on create gateway at the end of the page.
 
-    vpc>Internet gateway>create internet Gateway> give it a name> click on create gateway at the end of the page.
-
-     You Later nned to attach the IGW to yor VPC by going on the  gateways page>select the gateway crated> click on the dropdown on the action button and click attach to VPC button> select the VPC you want to 
+ You Later nned to attach the IGW to yor VPC by going on the  gateways page>select the gateway crated> click on the dropdown on the action button and click attach to VPC button> select the VPC you want to 
      
-     make an attachment to and click on attack internet gateway at the endof the page.
+make an attachment to and click on attack internet gateway at the endof the page.
 
-      The IGW state will be attached as shown on the screenshot below.
+The IGW state will be attached as shown on the screenshot below.
 
-     ![image](https://github.com/NANA-2016/AWS-NETWORKING-IPLEMENTATION/assets/141503408/9d45c89f-1a5a-4125-93d6-273c99e29e95)
+ ![image](https://github.com/NANA-2016/AWS-NETWORKING-IPLEMENTATION/assets/141503408/9d45c89f-1a5a-4125-93d6-273c99e29e95)
 
 ## Routing table.
 
